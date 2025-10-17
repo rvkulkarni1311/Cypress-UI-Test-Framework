@@ -4,6 +4,7 @@ import { defineConfig } from "cypress";
 export default defineConfig({
   defaultCommandTimeout: 100000,
   reporter: 'cypress-mochawesome-reporter',
+  author: 'Radhika K',
   e2e: {
     url: "https://demoqa.com",
     specPattern: "cypress/e2e/specs/**/*.spec.js",
