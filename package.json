@@ -1,0 +1,31 @@
+{
+  "name": "ui-test-framework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "SmokeTest": "npx cypress run",
+    "openCypress": "npx cypress open",
+    "headTest": "npx cypress run --headed"
+  },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true,
+      "outputFolder": "cypress/reports.json"
+    }
+  },
+  "author": "Radhika K",
+  "license": "ISC",
+  "description": "This is a UI test automation framework using Cypress and Cucumber.",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^23.2.0",
+    "@cypress/browserify-preprocessor": "latest",
+    "cypress": "^15.4.0",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.3.0"
+  },
+  "dependencies": {
+    "cypress-iframe": "1.0.1"
+  }
+}
