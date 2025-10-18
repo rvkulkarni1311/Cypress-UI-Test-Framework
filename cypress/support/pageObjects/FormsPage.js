@@ -36,9 +36,9 @@ class FormsPage {
               cy.visit(bookStoreApp.goTo() + '/forms');
             }
           });*/
-      }
-      
-      
+    }
+
+
     verifyInfoMessage() {
         cy.wait(10000);
         cy.contains(this.infoMessage).should('contain.text', 'Please select an item from left to start practice.');
@@ -72,7 +72,7 @@ class FormsPage {
             'Reading': '#hobbies-checkbox-2',
             'Music': '#hobbies-checkbox-3'
         };
-    
+
         // Loop through requested hobbies
         hobbiesArray.forEach(hobbyName => {
             const selector = hobbiesMap[hobbyName];
@@ -84,12 +84,12 @@ class FormsPage {
     uploadPicture() {
         // Ensure the input is in view and attach file from fixtures
         cy.get(this.chooseFile)
-          .scrollIntoView()
-          .selectFile('test.jpg'); // <-- file must be in cypress/fixtures
-      
+            .scrollIntoView()
+            .selectFile('test.jpg'); // <-- file must be in cypress/fixtures
+
         cy.log('File uploaded');
-      }
-      
+    }
+
     enterAddressStateCity() {
         cy.get(this.address).type('HSR Layout');
         cy.get(this.state).click();
@@ -102,6 +102,8 @@ class FormsPage {
     }
     validateFormSubmission() {
         cy.get(this.formValidationMessage).should('contain.text', 'Thanks for submitting the form');
+        cy.viewport(1920, 1080); // simulate zoom out
+        cy.wait(500);
         cy.get(this.closeForm).click();
     }
 }
